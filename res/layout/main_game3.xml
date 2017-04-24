@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/myRelativeLayout1"
+  android:background="@drawable/white"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <TextView
+    android:id="@+id/title"
+    android:layout_width="fill_parent"
+    android:layout_height="28px"
+    android:gravity="center"
+    android:text="go"
+    android:textColor="@drawable/red"
+    android:textSize="24px"
+  />
+  <TextView
+    android:id="@+id/text1"
+    android:layout_width="fill_parent"
+    android:layout_height="20px"
+    android:gravity="center"
+    android:text="go"
+    android:textColor="@drawable/blue"
+    android:textSize="16px"
+  />
+  <LinearLayout
+    android:id="@+id/layout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/white"
+  />
+</LinearLayout>

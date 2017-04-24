@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.try_littlegame"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name="com.example.try_littlegame.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.try_littlegame.game1.Game1"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.try_littlegame.Game2"
+            android:label="@string/app_name" >
+        </activity>
+                <activity
+            android:name="com.example.try_littlegame.game11.Game11"
+            android:label="@string/app_name" >
+        </activity>
+                <activity
+            android:name="com.example.try_littlegame.game10.Game10"
+            android:label="@string/app_name" >
+        </activity>
+                <activity
+            android:name="com.example.try_littlegame.game9.Game9"
+            android:label="@string/app_name" >
+        </activity>
+                        <activity
+            android:name="com.example.try_littlegame.game3.Game3"
+            android:label="@string/app_name" >
+        </activity>
+                        <activity
+            android:name="com.example.try_littlegame.game4.Game4"
+            android:label="@string/app_name" >
+        </activity>
+<activity
+            android:name="com.example.try_littlegame.game6.Game6"
+            android:label="@string/app_name" >
+        </activity>
+    </application>
+
+</manifest>
