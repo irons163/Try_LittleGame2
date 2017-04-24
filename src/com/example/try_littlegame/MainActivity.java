@@ -8,29 +8,35 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.try_gameengine.framework.Config;
+import com.example.try_gameengine.framework.Config.DestanceType;
+import com.example.try_gameengine.scene.SceneManager;
+import com.example.try_gameengine.stage.Stage;
+import com.example.try_gameengine.stage.StageManager;
 import com.example.try_littlegame.game1.BitmapUtil;
 import com.example.try_littlegame.game1.CommonUtil;
 import com.example.try_littlegame.game1.Game1;
 import com.example.try_littlegame.game10.Game10;
 import com.example.try_littlegame.game11.Game11;
+import com.example.try_littlegame.game2.Game2;
 import com.example.try_littlegame.game4.Game4;
 import com.example.try_littlegame.game6.Game6;
 import com.example.try_littlegame.game9.Game9;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Stage {
 	Button button,button2,button3,button4,button5,button6,button7,button8,button9;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-        DisplayMetrics dm=new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        
-        CommonUtil.screenWidth = dm.widthPixels;
-        CommonUtil.screenHeight = dm.heightPixels;
-        
-        BitmapUtil.initBitmap(this);
+//        DisplayMetrics dm=new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(dm);
+//        
+//        CommonUtil.screenWidth = dm.widthPixels;
+//        CommonUtil.screenHeight = dm.heightPixels;
+//        
+//        BitmapUtil.initBitmap(this);
         
 		button=(Button)findViewById(R.id.button1);
 		button2=(Button)findViewById(R.id.button2);
@@ -56,8 +62,9 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, Game2.class);
-				startActivity(intent);
+//				Intent intent = new Intent(MainActivity.this, Game2.class);
+//				startActivity(intent);
+				StageManager.changeStage(MainActivity.this, Game2.class, false);
 			}
 		});
 		
@@ -120,6 +127,27 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		
+		DisplayMetrics dm = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(dm);
+		
+		CommonUtil.screenHeight = dm.heightPixels;
+		CommonUtil.screenWidth = dm.widthPixels;
+		CommonUtil.statusBarHeight = CommonUtil.getStatusBarHeight(this);
+		CommonUtil.screenHeight -= CommonUtil.statusBarHeight;
+		
+		Config.enableFPSInterval = true;
+		Config.fps = 40;
+		Config.showFPS = true;
+		Config.destanceType = DestanceType.ScreenPersent;
+		Config.currentScreenWidth = CommonUtil.screenWidth;
+		Config.currentScreenHeight = CommonUtil.screenHeight;
+		
+		BitmapUtil.initBitmap(this);
+		
+		StageManager.init(this);
+		
+		initStage();
 	}
 
 	@Override
@@ -127,6 +155,13 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+
+	@Override
+	public SceneManager initSceneManager() {
+		// TODO Auto-generated method stub
+		SceneManager sceneManager = SceneManager.getInstance();
+		return sceneManager;
 	}
 
 }

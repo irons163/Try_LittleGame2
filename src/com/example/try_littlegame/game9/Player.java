@@ -13,6 +13,7 @@ public class Player {
 	private 
 	Boat ground;
 
+
 	public Player(int x, int y) {
 		// TODO Auto-generated constructor stub
 		this.x = x;

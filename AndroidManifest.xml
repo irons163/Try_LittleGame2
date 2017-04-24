@@ -27,7 +27,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.try_littlegame.Game2"
+            android:name="com.example.try_littlegame.game2.Game2"
             android:label="@string/app_name" >
         </activity>
                 <activity
